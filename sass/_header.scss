@@ -1,0 +1,35 @@
+.site-header {
+  padding: $bh/2 0;
+  text-align: left;
+
+  &:after {
+    @include clearfix;
+  }
+}
+.title-container {
+  margin: 0;
+  display: inline-block;
+}
+.site-title {
+  @extend %fourteen-pixels;
+  font-family: $montserrat;
+  font-weight: 700;
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .site-header {
+    display: flex;
+    align-items: center;
+  }
+  .social-media-icons {
+    margin-left: auto;
+    float: none;
+  }
+  .search-bar {
+
+    .social-media-icons {
+      margin-right: 42px;
+    }
+  }
+}

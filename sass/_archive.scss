@@ -1,0 +1,57 @@
+.blog,
+.archive,
+.search {
+
+  .post-content {
+    text-align: left;
+  }
+}
+.post-content .more-link {
+  font-family: $montserrat;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  transition: color 0.2s, background 0.2s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #fff;
+    background: $color-green;
+  }
+}
+.archive-header {
+
+  p {
+    margin: $bh/2 0;
+  }
+}
+.pagination {
+  font-family: $montserrat;
+}
+.full-post .comments-link {
+  display: inline;
+}
+.sticky-status span {
+  @extend %ten-pixels;
+  font-family: $montserrat;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .blog,
+  .archive,
+  .search {
+  
+    &:not(.extra-wide-post) {
+
+      .loop-container {
+        margin-top: $bh;
+      }
+    }
+  }  
+  .archive-header {
+    margin: $bh 0 $bh * 1.5;
+  }
+}

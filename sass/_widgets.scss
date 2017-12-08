@@ -1,0 +1,23 @@
+.sidebar  {
+  
+  .widget {
+
+    > * {
+      @extend %fourteen-pixels;
+    }
+    .widget-title {
+      font-family: $montserrat;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: $color-green;
+      }
+    }
+  }
+}

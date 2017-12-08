@@ -1,0 +1,13 @@
+.site-header .search-form-container {
+  top: 0;
+  right: 12px;
+}
+
+@media all and (min-width: $nine-hundred) {
+
+  .site-header .search-form-container {
+    position: absolute;
+    top: -7px;
+    right: -10px;
+  }
+}

@@ -1,0 +1,11 @@
+.search-header {
+  margin-bottom: $bh * 1.5;
+
+  .post-title {
+    @extend %twenty-one-pixels;
+    font-weight: 400;
+  }
+  .search-form-container {
+    margin: $bh 0;
+  }
+}

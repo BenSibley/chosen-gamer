@@ -1,0 +1,80 @@
+# Copyright (C) 2017 Compete Themes
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Chosen Gamer 1.27\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2017-12-07 22:26:06+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.4.9\n"
+
+#: content/comments-link.php:3
+msgid "comment icon"
+msgstr ""
+
+#: content/comments-link.php:6
+msgid "Comments closed"
+msgstr ""
+
+#: content/comments-link.php:6 content/comments-link.php:9
+msgid "1 Comment"
+msgstr ""
+
+#: content/comments-link.php:9
+msgid "Leave a Comment"
+msgstr ""
+
+#: content-page.php:13 content.php:37
+msgid "Pages:"
+msgstr ""
+
+#: content.php:32
+msgid "Published"
+msgstr ""
+
+#: functions.php:72
+msgid "<a href=\"%s\">Chosen Gamer Theme</a> by Compete Themes."
+msgstr ""
+
+#: header.php:11
+msgid "Skip to content"
+msgstr ""
+
+#: inc/customizer.php:16
+msgid "Show the categories above the post title?"
+msgstr ""
+
+#: inc/customizer.php:21 inc/customizer.php:38 inc/customizer.php:55
+msgid "Show"
+msgstr ""
+
+#: inc/customizer.php:22 inc/customizer.php:39 inc/customizer.php:56
+msgid "Hide"
+msgstr ""
+
+#: inc/customizer.php:33
+msgid "Show the comments link after the post title?"
+msgstr ""
+
+#: inc/customizer.php:50
+msgid "Show the author name after the post title?"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Chosen Gamer is..."
+msgstr ""
+
+#: content/comments-link.php:6 content/comments-link.php:9
+msgctxt "noun: 5 comments"
+msgid "% Comments"
+msgstr ""
+
+#: header.php:23
+msgctxt "verb: open the menu"
+msgid "open menu"
+msgstr ""

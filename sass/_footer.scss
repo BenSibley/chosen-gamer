@@ -1,0 +1,8 @@
+.design-credit {
+  @extend %fourteen-pixels;
+  font-family: $montserrat;
+
+  a {
+    text-decoration: underline;
+  }
+}
