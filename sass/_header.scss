@@ -15,12 +15,18 @@
   font-family: $montserrat;
   font-weight: 700;
 }
+.tagline {
+  text-transform: none;
+}
 
 @media all and (min-width: $nine-hundred) {
 
   .site-header {
     display: flex;
     align-items: center;
+  }
+  .title-container {
+    flex-shrink: 0;
   }
   .social-media-icons {
     margin-left: auto;

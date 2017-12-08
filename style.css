@@ -99,12 +99,20 @@ input[type="submit"] {
   font-weight: 700;
 }
 
+.tagline {
+  text-transform: none;
+}
+
 @media all and (min-width: 56.25em) {
   .site-header {
     display: -webkit-box;
     display: flex;
     -webkit-box-align: center;
             align-items: center;
+  }
+
+  .title-container {
+    flex-shrink: 0;
   }
 
   .social-media-icons {
@@ -141,7 +149,8 @@ input[type="submit"] {
 .menu-primary a:hover, .menu-primary a:active, .menu-primary a:focus {
   color: #15D9AF;
 }
-.menu-primary .current-menu-item > a {
+.menu-primary .current-menu-item > a,
+.menu-primary .current_page_item > a {
   outline: none;
   border-bottom: solid 2px #15D9AF;
 }

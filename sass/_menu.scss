@@ -24,7 +24,8 @@
       color: $color-green;
     }
   }
-  .current-menu-item > a {
+  .current-menu-item > a,
+  .current_page_item > a  {
     outline: none;
     border-bottom: solid 2px $color-green;
   }
