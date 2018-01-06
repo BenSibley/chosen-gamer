@@ -17,17 +17,14 @@ add_action( 'after_setup_theme', 'chosen_gamer_setup_theme' );
 // Load scripts and stylesheets for the front-end
 //----------------------------------------------------------------------------------
 function chosen_gamer_enqueue_styles() {
-  
   // load Chosen stylesheet
   $parent_style = 'ct-chosen-style';
   wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
-
   // load stylesheet after Chosen's stylesheet (uses it as a dependency)
   wp_enqueue_style( 'ct-chosen-gamer-style',
     get_stylesheet_directory_uri() . '/style.css',
     array( $parent_style )
   );
-
   // load Google Fonts (Montserrate & PT Serif)
   $font_args = array(
 		'family' => str_replace( '%2B', '+', urlencode( 'Montserrat:400:700|PT+Serif:400,400i' ))
@@ -36,6 +33,14 @@ function chosen_gamer_enqueue_styles() {
   wp_enqueue_style( 'ct-chosen-gamer-google-fonts', $fonts_url );
 }
 add_action( 'wp_enqueue_scripts', 'chosen_gamer_enqueue_styles' );
+
+//----------------------------------------------------------------------------------
+// Load scripts and stylesheets on the back-end
+//----------------------------------------------------------------------------------
+function chosen_gamer_admin_enqueue_scripts() {
+  wp_enqueue_script( 'chosen-gamer-admin-js', trailingslashit(get_stylesheet_directory_uri()) . 'js/admin.js', array( 'jquery' ), '', true );
+}
+add_action( 'admin_enqueue_scripts', 'chosen_gamer_admin_enqueue_scripts' );
 
 //----------------------------------------------------------------------------------
 // Dequeue Google Fonts loaded by Chosen
@@ -90,20 +95,32 @@ add_filter( 'subtitle_exists', 'chosen_gamer_no_subtitles_archives' );
 // Recommend the Subtitles plugin in an admin notice
 //----------------------------------------------------------------------------------
 function chosen_gamer_recommend_subtitle_plugin() {
-  $plugins = get_plugins();
-  if ( !array_key_exists( 'subtitles/subtitles.php', $plugins ) ) {
-    $plugin_search = add_query_arg( array(
-      'tab' => 'search',
-      's'   => 'subtitles'
-    ), admin_url( 'plugin-install.php' ) );
-    ?>
-    <div class="notice notice-info">
-        <p><?php printf( __( 'Please install the <a href="%s">Subtitles</a> plugin to display subtitles on posts and pages.', 'chosen-gamer' ), $plugin_search); ?></p>
-    </div>
-    <?php
+  if ( !get_option('chosen-gamer-notice-dismissed') ) { 
+    $plugins = get_plugins();
+    if ( !array_key_exists( 'subtitles/subtitles.php', $plugins ) ) {
+      $plugin_search = add_query_arg( array(
+        'tab' => 'search',
+        's'   => 'subtitles'
+      ), admin_url( 'plugin-install.php' ) );
+      ?>
+      <div class="notice notice-info is-dismissible chosen-gamer-subtitles">
+          <p><?php printf( __( 'Please install the <a href="%s">Subtitles</a> plugin to display subtitles on posts and pages.', 'chosen-gamer' ), $plugin_search); ?></p>
+      </div>
+      <?php
+    }
   }
 }
 add_action( 'admin_notices', 'chosen_gamer_recommend_subtitle_plugin' );
+
+//----------------------------------------------------------------------------------
+// Ajax handler for permanently dismissing admin notice
+//----------------------------------------------------------------------------------
+function chosen_gamer_ajax_notice_handler() {
+  if ( $_POST['chosen_gamer_dismissed'] ) {
+    update_option( 'chosen-gamer-notice-dismissed', true );
+  }
+}
+add_action( 'wp_ajax_dismissed_notice_handler', 'chosen_gamer_ajax_notice_handler' );
 
 //----------------------------------------------------------------------------------
 // Add Chosen Gamer's new Customizer settings to Chosen's reset option
@@ -113,11 +130,3 @@ function chosen_gamer_reset_customizer_settings($mods_array) {
   return $mods_array;
 }
 add_filter( 'ct_chosen_mods_to_remove', 'chosen_gamer_reset_customizer_settings' );
-
-//----------------------------------------------------------------------------------
-// Remove activation redirect
-//----------------------------------------------------------------------------------
-function chosen_gamer_disable_welcome_redirect() {
-  remove_action( 'after_switch_theme', 'ct_chosen_welcome_redirect' );
-}
-add_action( 'after_switch_theme', 'chosen_gamer_disable_welcome_redirect', 0 );
