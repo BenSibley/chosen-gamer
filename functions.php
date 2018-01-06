@@ -113,3 +113,11 @@ function chosen_gamer_reset_customizer_settings($mods_array) {
   return $mods_array;
 }
 add_filter( 'ct_chosen_mods_to_remove', 'chosen_gamer_reset_customizer_settings' );
+
+//----------------------------------------------------------------------------------
+// Remove activation redirect
+//----------------------------------------------------------------------------------
+function chosen_gamer_disable_welcome_redirect() {
+  remove_action( 'after_switch_theme', 'ct_chosen_welcome_redirect' );
+}
+add_action( 'after_switch_theme', 'chosen_gamer_disable_welcome_redirect', 0 );
