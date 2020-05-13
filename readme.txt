@@ -2,8 +2,8 @@
 Contributors: bensibley
 Tags: one-column, two-columns, custom-logo, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, photography
 Requires at least: 4.5
-Tested up to: 4.9
-Stable tag: 1.1
+Tested up to: 5.4
+Stable tag: 1.2
 
 Chosen Gamer is a gorgeous and mobile responsive theme for video game blogs, magazines, and podcasts.
 
@@ -13,7 +13,7 @@ Chosen Gamer is a gorgeous and mobile responsive theme for video game blogs, mag
 
 **Live Demo**
 
-View a fully-setup live demo of Chosen Gamer here: [Live demo](https://www.competethemes.com/demos/?theme=chosen-gamer)
+View a fully-setup live demo of Chosen Gamer here: [Live demo](https://chosen-gamer.competethemes.com/)
 
 **Features**
 
